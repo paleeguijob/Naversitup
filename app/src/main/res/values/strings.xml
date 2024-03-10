@@ -12,7 +12,7 @@
     <string name="never_sit_up_landing_department_department_list_title">Department Carousel</string>
     <string name="never_sit_up_landing_department_selected">Please, Select The Store</string>
     <string name="never_sit_up_landing_product_not_found_title">Something Wrong!</string>
-    <string name="never_sit_up_landing_product_not_found_message">Not fount any Product of this department.</string>
+    <string name="never_sit_up_landing_product_not_found_message">Not found any Product of this department.</string>
     <string name="never_sit_up_landing_product_product_list_title">Product list : </string>
 
 </resources>
