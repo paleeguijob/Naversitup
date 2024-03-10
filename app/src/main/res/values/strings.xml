@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Naversitup</string>
+
+    <!--  Common  -->
+    <string name="never_sit_up_common_close">Close</string>
+    <string name="never_sit_up_common_dialog_title">Product Description</string>
+    <string name="never_sit_up_common_dialog_description">Description</string>
+
+    <!--  Landing  -->
+    <string name="never_sit_up_landing_department_not_found_title">Something Wrong!</string>
+    <string name="never_sit_up_landing_department_not_found_message">Can not found any department, Please Try again later.</string>
+    <string name="never_sit_up_landing_department_department_list_title">Department Carousel</string>
+    <string name="never_sit_up_landing_department_selected">Please, Select The Store</string>
+    <string name="never_sit_up_landing_product_not_found_title">Something Wrong!</string>
+    <string name="never_sit_up_landing_product_not_found_message">Not fount any Product of this department.</string>
+    <string name="never_sit_up_landing_product_product_list_title">Product list : </string>
+
+</resources>
