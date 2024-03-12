@@ -1,5 +1,6 @@
 package realaof.realhon.realha.naversitup.ui.sceen.landing.uimodel
 
+import realaof.realhon.realha.naversitup.model.enum.ProductType
 import realaof.realhon.realha.naversitup.model.network.BaseCommonError
 
 data class LandingUiState(
@@ -23,12 +24,13 @@ data class LandingUiState(
             val loading: Boolean? = null,
             val error: BaseCommonError? = null,
             val success: List<ProductUi>? = listOf()
-        ){
+        ) {
             data class ProductUi(
                 val imageUrl: String = "",
                 val name: String = "",
                 val description: String = "",
-                val price: String = ""
+                val price: String = "",
+                val type: ProductType = ProductType.NORMAL
             )
         }
     }

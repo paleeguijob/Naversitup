@@ -1,6 +1,7 @@
 package realaof.realhon.realha.naversitup.domain.mapper.nerversit
 
 import realaof.realhon.realha.naversitup.model.department.DepartmentItem
+import realaof.realhon.realha.naversitup.model.enum.ProductType
 import realaof.realhon.realha.naversitup.model.product.ProductItem
 import realaof.realhon.realha.naversitup.ui.sceen.landing.uimodel.LandingUiState
 import javax.inject.Inject
@@ -22,7 +23,8 @@ class NeversitupMapperImpl @Inject constructor() : NeversitupMapper {
                 imageUrl = it.imageUrl,
                 name = it.name,
                 description = it.desc,
-                price = it.price
+                price = it.price,
+                type = if (it.type == "spacial") ProductType.SPACIAL else ProductType.NORMAL
             )
         }
 }

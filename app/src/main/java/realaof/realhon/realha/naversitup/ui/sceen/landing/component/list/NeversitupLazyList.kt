@@ -25,8 +25,10 @@ import io.woong.compose.grid.VerticalGrid
 import realaof.realhon.realha.naversitup.R
 import realaof.realhon.realha.naversitup.common.component.error.BaseErrorScreen
 import realaof.realhon.realha.naversitup.common.component.loading.BaseLoading
+import realaof.realhon.realha.naversitup.model.enum.ProductType
 import realaof.realhon.realha.naversitup.ui.sceen.landing.component.item.DepartmentItem
 import realaof.realhon.realha.naversitup.ui.sceen.landing.component.item.ProductItem
+import realaof.realhon.realha.naversitup.ui.sceen.landing.component.item.ProductSpacialItem
 import realaof.realhon.realha.naversitup.ui.sceen.landing.uimodel.LandingUiState
 import realaof.realhon.realha.naversitup.ui.theme.dimen
 
@@ -39,6 +41,7 @@ fun NeversitupLazyList(
 ) {
     LazyColumn(
         modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(dimen.dimen_16),
         contentPadding = PaddingValues(dimen.dimen_16)
     ) {
         item {
@@ -70,7 +73,7 @@ fun DepartmentList(
             style = MaterialTheme.typography.bodyLarge.copy(
                 fontWeight = FontWeight.Bold
             ),
-            modifier = Modifier.padding(vertical = dimen.dimen_16)
+            modifier = Modifier.padding(vertical = dimen.dimen_8)
         )
 
         HorizontalGrid(
@@ -149,7 +152,7 @@ fun ProductList(
             style = MaterialTheme.typography.bodyLarge.copy(
                 fontWeight = FontWeight.Bold
             ),
-            modifier = modifier.padding(vertical = dimen.dimen_16)
+            modifier = modifier.padding(vertical = dimen.dimen_8)
         )
 
         VerticalGrid(
@@ -158,10 +161,18 @@ fun ProductList(
             verticalArrangement = Arrangement.spacedBy(dimen.dimen_16),
         ) {
             products.forEach { product ->
-                ProductItem(
-                    productsUi = product,
-                    onProductClicked = onProductClicked
-                )
+
+                when (product.type) {
+                    ProductType.NORMAL -> ProductItem(
+                        productsUi = product,
+                        onProductClicked = onProductClicked
+                    )
+
+                    ProductType.SPACIAL -> ProductSpacialItem(
+                        productsUi = product,
+                        onProductClicked = onProductClicked
+                    )
+                }
             }
         }
     }

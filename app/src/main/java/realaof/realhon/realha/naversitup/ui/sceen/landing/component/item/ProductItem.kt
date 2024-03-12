@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -35,7 +34,6 @@ fun ProductItem(
 
     Card(
         modifier = modifier
-            .width(dimen.dimen_200)
             .clickable {
                 onProductClicked(productsUi)
             }
@@ -49,13 +47,15 @@ fun ProductItem(
                 .build()
         )
 
-        Column(modifier = Modifier.width(dimen.dimen_200)) {
+        Column(modifier = Modifier) {
 
             Image(
                 painter = painter,
                 contentScale = ContentScale.Crop,
                 contentDescription = "Never sit up Product Image",
-                modifier = Modifier.height(height = dimen.dimen_149)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(height = dimen.dimen_149)
             )
 
             Text(
@@ -78,6 +78,7 @@ fun ProductItem(
                     fontWeight = FontWeight.Bold
                 ),
                 overflow = TextOverflow.Ellipsis,
+                minLines = 3,
                 maxLines = 3,
                 modifier = Modifier
                     .padding(dimen.dimen_8)
@@ -111,7 +112,7 @@ private fun ProductItemPreview() {
     ProductItem(
         productsUi = LandingUiState.LandingUi.ProductUiState.ProductUi(
             name = "RealAOF love RealHON",
-            description = "Mark".repeat(20),
+            description = "Mark".repeat(100),
             price = "10,000"
         ),
         onProductClicked = {}
